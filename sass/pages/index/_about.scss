@@ -31,20 +31,24 @@
   height: 70px;
 }
 .about-list__title {
-  font-weight: 700;
-  font-size: 14px;
-  line-height: calc(16 / 14);
-  letter-spacing: 0.03em;
+  // font-weight: 700;
+  // font-size: 14px;
+  // line-height: calc(16 / 14);
+  // letter-spacing: 0.03em;
+  // color: $accent-color;
+
   text-transform: uppercase;
-  color: var(--title-text-color);
   margin-top: 30px;
+  @include font(700, 14px, 16px, 0.03em, $accent-color);
 }
 .about-list__text {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: calc(24 / 14);
-  letter-spacing: 0.03em;
-  color: var(--text-color);
+  // font-weight: 400;
+  // font-size: 14px;
+  // line-height: calc(24 / 14);
+  // letter-spacing: 0.03em;
+  // color: $text-color;
+
+  @include font(400, 14px, 24px, 0.03em, $text-color);
   margin-top: 10px;
 }
 .about-after {

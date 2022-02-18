@@ -37,23 +37,20 @@
   padding: 0;
   margin: 0;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    fill: $primary-color;
+  }
 }
 .modal-exit__icon {
   width: 11px;
   height: 11px;
 }
-.modal-exit:hover,
-.modal-exit:focus {
-  fill: var(--brend-color);
-}
+
 .modal__title {
-  font-weight: 700;
-  font-size: 20px;
-  line-height: calc(23 / 20);
   text-align: center;
-  letter-spacing: 0.03em;
   margin-bottom: 12px;
-  color: var(--title-text-color);
+  @include font(700, 20px, 24px, 0.03em, $accent-color);
 }
 .modal-form {
 }
@@ -69,12 +66,13 @@
 }
 .form__label {
   display: block;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: calc(14 / 12);
-  letter-spacing: 0.01em;
-  color: var(--header-text-color);
+  // font-weight: 400;
+  // font-size: 12px;
+  // line-height: calc(14 / 12);
+  // letter-spacing: 0.01em;
+  // color: $accent-color;
   margin-bottom: 4px;
+  @include font(400, 12px, 14px, 0.01em, $accent-color);
 }
 .form__wrap {
   position: relative;
@@ -87,6 +85,14 @@
   padding-left: 42px;
   border-radius: 4px;
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:focus {
+    border: 1px solid $primary-color;
+    border-radius: 4px;
+    outline: 0;
+    + .form__icon {
+      fill: $primary-color;
+    }
+  }
 }
 .form__icon {
   position: absolute;
@@ -97,15 +103,6 @@
   transform: translateY(50%);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.form__input:focus,
-.form__text:focus {
-  border: 1px solid var(--brend-color);
-  border-radius: 4px;
-  outline: 0;
-}
-.form__input:focus + .form__icon {
-  fill: var(--brend-color);
-}
 
 .form__text {
   width: 100%;
@@ -115,11 +112,30 @@
   border: 1px solid rgba(33, 33, 33, 0.2);
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 4px;
+  &:focus {
+    border: 1px solid $primary-color;
+    border-radius: 4px;
+    outline: 0;
+  }
 }
 .checkbox {
   margin-bottom: 30px;
 }
 .modal-checkbox {
+  &:checked + .checkbox__label span {
+    background-color: $primary-color;
+    border: none;
+  }
+  &:not(:checked) + .checkbox__label span {
+    border: 2px solid $accent-color;
+  }
+  &:focus + .checkbox__label span {
+    border: 2px solid $primary-color;
+  }
+
+  &:checked + .checkbox__label svg {
+    fill: #fff;
+  }
 }
 
 .checkbox__icon {
@@ -128,13 +144,12 @@
   fill: transparent;
 }
 .checkbox__label {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: calc(24 / 14);
-
-  letter-spacing: 0.03em;
-  color: var(--header-text-color);
+  // font-weight: 400;
+  // font-size: 14px;
+  // line-height: calc(24 / 14);
+  // letter-spacing: 0.03em;
+  // color: $accent-color;
+  @include font(400, 14px, 24px, 0.03em, $accent-color);
   align-items: center;
   display: flex;
   justify-content: center;
@@ -142,7 +157,7 @@
 .checkbox__label span {
   width: 16px;
   height: 15px;
-  border: 2px solid var(--header-text-color);
+  border: 2px solid $accent-color;
   border-radius: 2px;
   margin-right: 5px;
   display: flex;
@@ -152,45 +167,32 @@
     fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal-checkbox:checked + .checkbox__label span {
-  background-color: var(--brend-color);
-  border: none;
-}
-.modal-checkbox:not(:checked) + .checkbox__label span {
-  border: 2px solid var(--header-text-color);
-}
-.modal-checkbox:focus + .checkbox__label span {
-  border: 2px solid var(--brend-color);
-}
-
-.modal-checkbox:checked + .checkbox__label svg {
-  fill: #fff;
-}
 
 .modal-checkbox__submit {
   text-decoration: underline;
-  color: var(--brend-color);
+  color: $primary-color;
 }
 .modal-form__btn {
-  background-color: var(--brend-color);
+  background-color: $primary-color;
   display: block;
   margin: 0 auto;
-  color: #fff;
   font-family: inherit;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: calc(30 / 16);
-  letter-spacing: 0.06em;
-  cursor: pointer;
+
+  // color: #fff;
+  //   font-weight: 700;
+  //   font-size: 16px;
+  //   line-height: calc(30 / 16);
+  //   letter-spacing: 0.06em;
+  @include font(700, 16px, 30px, 0.06em, #fff);
+
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
-
   padding: 10px 32px 10px 32px;
   min-width: 200px;
 
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.modal-form__btn:hover {
-  background-color: #1e5380;
+  &:hover {
+    background-color: #1e5380;
+  }
 }
