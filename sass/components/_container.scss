@@ -7,6 +7,12 @@
   width: 1200px;
   padding: 0px 15px 0px 15px;
   margin: 0 auto 0 auto;
+  @media (max-width: $desktop) {
+    width: $tablet;
+  }
+  @media (max-width: $tablet) {
+    width: 100%;
+  }
 }
 .container-header {
   width: 1200px;
