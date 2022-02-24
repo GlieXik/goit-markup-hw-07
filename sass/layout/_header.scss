@@ -16,7 +16,7 @@
   // line-height: 1.19;
   // letter-spacing: 0.03em;
   @include font(700, 26px, 31px, 0.03em, $primary-color);
-  margin-right: 93px;
+  // !? margin-right: 93px;
 }
 .header__logo {
   color: $accent-color;

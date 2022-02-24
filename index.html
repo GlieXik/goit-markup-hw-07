@@ -128,19 +128,41 @@
           <h2 class="about-after__title">Чем мы занимаемся</h2>
           <ul class="about-after__list">
             <li class="about-after__item">
-              <img
-                src="./images/index-img/box1.jpg"
-                alt="keyboard"
-                width="370"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/index-img/box1.jpg    1x,
+                    ./images/index-img/box1-2x.jpg 2x
+                  "
+                />
+                <img src="./images/index-img/box1.jpg" alt="keyboard" />
+              </picture>
               <p class="about-after__text">Десктопные приложения</p>
             </li>
             <li class="about-after__item">
-              <img src="./images/index-img/box2.jpg" alt="phone" width="370" />
+              <picture>
+                <source
+                  srcset="
+                    ./images/index-img/box2.jpg    1x,
+                    ./images/index-img/box2-2x.jpg 2x
+                  "
+                />
+                <img src="./images/index-img/box2.jpg" alt="keyboard" />
+              </picture>
+
               <p class="about-after__text">Мобильные приложения</p>
             </li>
             <li class="about-after__item">
-              <img src="./images/index-img/box3.jpg" alt="colors" width="370" />
+              <picture>
+                <source
+                  srcset="
+                    ./images/index-img/box3.jpg    1x,
+                    ./images/index-img/box3-2x.jpg 2x
+                  "
+                />
+                <img src="./images/index-img/box3.jpg" alt="keyboard" />
+              </picture>
+
               <p class="about-after__text">Дизайнерские решения</p>
             </li>
           </ul>
@@ -440,7 +462,7 @@
           </ul>
         </div>
       </section>
-      <!-- <section class="customers">
+      <section class="customers">
         <div class="container">
           <h2 class="customers__title">Постоянные клиенты</h2>
           <ul class="customers-list">
@@ -488,11 +510,11 @@
             </li>
           </ul>
         </div>
-      </section> -->
+      </section>
     </main>
-    <!-- <footer class="footer">
-      <div class="container flex">
-        <div>
+    <footer class="footer">
+      <div class="container-footer container">
+        <div class="footer-info">
           <a href="./index.html" class="logo">
             Web<span class="footer__logo">Studio</span>
           </a>
@@ -576,7 +598,7 @@
           </form>
         </div>
       </div>
-    </footer> -->
+    </footer>
 
     <div class="overlay is-hidden" data-modal>
       <div class="modal">
